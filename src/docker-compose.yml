@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+  eureka:
+    image: springcloud/eureka
+    hostname: localhost
+    ports:
+      - "8761:8761"
