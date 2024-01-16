@@ -7,9 +7,13 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://172.20.0.4:${server.port}/eureka/
+
+# this 172.20.0.1 is from the docker network
